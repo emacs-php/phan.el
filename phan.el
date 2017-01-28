@@ -172,7 +172,7 @@
 
 (defconst phan-log-class-prefix-keywords
   '(":" "but" "class" "for" "function" "is" "method" "property" "return" "takes" "to" "type"
-    "Property" "Method"))
+    "Class" "Property" "Method"))
 
 (defconst phan-log-mode-syntax-table
   (let ((table (make-syntax-table)))
@@ -197,14 +197,21 @@
    (cons (concat "\\(?:\\`\\| \\)\\(" (regexp-opt phan-log-warning-keywords) "\\)\\(?: \\|$\\)")
          '(1 font-lock-warning-face))
    (cons (concat "\\(?:|\\|, \\| " (regexp-opt phan-log-class-prefix-keywords) " \\)"
+                 (rx (group (? "\\") (+ (or "|" (syntax word) (syntax symbol))) "()")))
+         '(1 font-lock-function-name-face))
+   (cons (concat "\\(?:|\\|, \\| " (regexp-opt phan-log-class-prefix-keywords) " \\)"
                  (rx (group "\\" (+ (or "|" (syntax word) (syntax symbol))))))
          '(1 font-lock-type-face))
-   (cons "constant \\(\\(?:\\sw\\|\\s_\\)+\\)"
+   (cons " constant \\(\\(?:\\sw\\|\\s_\\)+\\)"
          '(1 font-lock-constant-face))
+   (cons "\\(?:::\\|->\\)\\(\\(?:\\sw\\|\\s_\\)+()\\)"
+         '(1 font-lock-function-name-face))
    (cons "::\\(\\(?:\\sw\\|\\s_\\)+\\)"
          '(1 font-lock-constant-face))
-   (cons "Argument [0-9]+ (\\(\\(?:\\sw\\|\\s_\\)+\\))"
+   (cons " Argument [0-9]+ (\\(\\(?:\\sw\\|\\s_\\)+\\))"
          '(1 font-lock-variable-name-face))
+   (cons " Call to method \\([^\n\\][^\n ]*\\) "
+         '(1 font-lock-function-name-face))
    (cons "\\(?:\\$\\|->\\)\\(\\sw\\|\\s_\\)+"
          '(0 font-lock-variable-name-face))))
 
