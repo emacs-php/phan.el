@@ -6,6 +6,7 @@
 ;; Created: 28 Jan 2017
 ;; Version: 0.0.1
 ;; Keywords: tools php
+;; Package-Requires: ((emacs "24") (composer "0.0.8") (f "0.17"))
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -215,6 +216,12 @@
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("/phan.*\\.log\\'" . phan-log-mode))
+
+;;;###autoload
+(defun phan-find-config-file ()
+  "Open Phan config file of the project."
+  (interactive)
+  (find-file (f-join (composer--find-composer-root default-directory) ".phan/config.php")))
 
 (provide 'phan)
 ;;; phan.el ends here
