@@ -209,7 +209,7 @@
   (setq font-lock-defaults '(phan-log-font-lock-keywords))
   (view-mode))
 
-(add-to-list 'auto-mode-alist '("/phan.*\\.log\z" . phan-log-mode))
+(add-to-list 'auto-mode-alist '("/phan.*\\.log\\'" . phan-log-mode))
 
 (provide 'phan)
 ;;; phan.el ends here
