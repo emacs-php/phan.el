@@ -4,7 +4,7 @@
 
 ;; Author: USAMI Kenta <tadsan@pixiv.com>
 ;; Created: 28 Jan 2017
-;; Keywords: languages php
+;; Keywords: tools php
 
 ;; This file is NOT part of GNU Emacs.
 
