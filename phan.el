@@ -204,11 +204,13 @@
    (cons "\\(?:\\$\\|->\\)\\(\\sw\\|\\s_\\)+"
          '(0 font-lock-variable-name-face))))
 
+;;;###autoload
 (define-derived-mode phan-log-mode prog-mode "Phan-Log"
   "Major mode for viewing phan formatted log."
   (setq font-lock-defaults '(phan-log-font-lock-keywords))
   (view-mode))
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("/phan.*\\.log\\'" . phan-log-mode))
 
 (provide 'phan)
