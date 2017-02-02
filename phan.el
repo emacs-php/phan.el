@@ -1,9 +1,10 @@
-;;; phan.el --- Utilities for Phan (PHP static analizer)
+;;; phan.el --- Utility functions for Phan (PHP static analizer)
 
 ;; Copyright (C) 2017 USAMI Kenta
 
 ;; Author: USAMI Kenta <tadsan@pixiv.com>
 ;; Created: 28 Jan 2017
+;; Version: 0.0.1
 ;; Keywords: tools php
 
 ;; This file is NOT part of GNU Emacs.
@@ -28,6 +29,8 @@
 
 
 ;;; Code:
+(require 'composer)
+
 (defgroup phan nil
   "Utilities for Phan (PHP static analizer)"
   :prefix "phan-"
