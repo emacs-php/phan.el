@@ -174,7 +174,7 @@
   '(":" "but" "class" "for" "function" "is" "method" "property" "return" "takes" "to" "type"
     "Property" "Method"))
 
-(defconst maruo-macro-mode-syntax-table
+(defconst phan-log-mode-syntax-table
   (let ((table (make-syntax-table)))
     (modify-syntax-entry ?_  "_" table)
     (modify-syntax-entry ?\\ "_" table)
