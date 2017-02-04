@@ -1,0 +1,3 @@
+sample/code.php:30 PhanTypeInvalidLeftOperand Invalid operator: right operand is array and left is not
+sample/code.php:31 PhanTypeMismatchReturn Returning type int[] but my_create_datetime() is declared to return \DataTimeInterface
+sample/code.php:34 PhanTypeMismatchReturn Returning type \DateTimeImmutable but my_create_datetime() is declared to return \DataTimeInterface
