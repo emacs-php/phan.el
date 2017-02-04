@@ -1,0 +1,8 @@
+{
+    "name": "zonuexe/phan-el",
+    "description": "Utility functions for Phan (PHP static analizer)",
+    "license": "GPL-3.0",
+    "require-dev": {
+        "etsy/phan": "^0.8.3"
+    }
+}

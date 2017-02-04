@@ -1,2 +1,4 @@
 .cask
 *.elc
+/composer.lock
+/vendor/
