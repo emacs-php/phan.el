@@ -31,6 +31,7 @@
 
 ;;; Code:
 (require 'composer)
+(require 'f)
 
 (defgroup phan nil
   "Utilities for Phan (PHP static analizer)"

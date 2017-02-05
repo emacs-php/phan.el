@@ -2,6 +2,3 @@
 (source "melpa" "https://melpa.org/packages/")
 
 (package-file "phan.el")
-
-(depends-on "f")
-(depends-on "composer")
