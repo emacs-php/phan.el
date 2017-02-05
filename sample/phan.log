@@ -1,3 +1,12 @@
-sample/code.php:30 PhanTypeInvalidLeftOperand Invalid operator: right operand is array and left is not
-sample/code.php:31 PhanTypeMismatchReturn Returning type int[] but my_create_datetime() is declared to return \DataTimeInterface
-sample/code.php:34 PhanTypeMismatchReturn Returning type \DateTimeImmutable but my_create_datetime() is declared to return \DataTimeInterface
+sample/code.php:18 PhanParamTooMany Call with 2 arg(s) to \Emacs\PhanEl\my_create_datetime() which only takes 1 arg(s) defined at sample/code.php:30
+sample/code.php:18 PhanTypeMismatchArgument Argument 1 (num) is array but \Emacs\PhanEl\my_create_datetime() takes int defined at sample/code.php:30
+sample/code.php:24 PhanUndeclaredFunction Call to undeclared function \deprecated()
+sample/code.php:34 PhanTypeInvalidLeftOperand Invalid operator: right operand is array and left is not
+sample/code.php:34 PhanUndeclaredVariable Variable $z is undeclared
+sample/code.php:36 PhanUndeclaredClassConstant Reference to constant Foo from undeclared class \Emacs\PhanEl\FooBar
+sample/code.php:36 PhanUndeclaredConstant Reference to undeclared constant \HOGE
+sample/code.php:37 PhanParamTooFew Call with 0 arg(s) to \Emacs\PhanEl\getUserId() which requires 1 arg(s) defined at sample/code.php:52
+sample/code.php:37 PhanUndeclaredFunction Call to undeclared function \FooBar\Buz()
+sample/code.php:39 PhanTypeMismatchReturn Returning type int[] but my_create_datetime() is declared to return \DataTimeInterface
+sample/code.php:42 PhanTypeMismatchReturn Returning type \DateTimeImmutable but my_create_datetime() is declared to return \DataTimeInterface
+sample/code.php:52 PhanTypeMismatchReturn Returning type int[] but getUserId() is declared to return int
