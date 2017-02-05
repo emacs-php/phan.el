@@ -1,2 +1,2 @@
 * phan.el
-Emacs Utilities for Phan (PHP static analizer)
+Emacs Utilities for [[https://github.com/etsy/phan][Phan]] (PHP static analizer)
