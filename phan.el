@@ -189,7 +189,7 @@
    (list "^\\([^:]+\\):\\([0-9]+\\)"
          '(1 font-lock-doc-face)
          '(2 font-lock-builtin-face))
-   (cons (concat "[ |[]\\(" (regexp-opt phan-php-types) "\\)")
+   (cons (concat "\\(?:\\`\\|[ |[]\\)\\(" (regexp-opt phan-php-types) "\\)\\(?:[ |,[]\\|$\\)")
          '(1 font-lock-type-face))
    (cons "\\[]" '(0 font-lock-type-face))
    (cons (concat " " (regexp-opt phan-issues) " ")
