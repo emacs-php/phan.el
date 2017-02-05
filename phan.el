@@ -1,4 +1,4 @@
-;;; phan.el --- Utility functions for Phan (PHP static analizer)
+;;; phan.el --- Utility functions for Phan (PHP static analizer)  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2017 USAMI Kenta
 
