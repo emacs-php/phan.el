@@ -61,15 +61,22 @@
 (defconst phan-issues
   '("PhanSyntaxError"
     ;; Issue::CATEGORY_UNDEFINED
+    "PhanAmbiguousTraitAliasSource"
+    "PhanClassContainsAbstractMethodInternal"
+    "PhanClassContainsAbstractMethod"
     "PhanEmptyFile"
     "PhanParentlessClass"
+    "PhanRequiredTraitNotAdded"
     "PhanTraitParentReference"
+    "PhanUndeclaredAliasedMethodOfTrait"
     "PhanUndeclaredClass"
+    "PhanUndeclaredClassAliasOriginal"
     "PhanUndeclaredClassCatch"
     "PhanUndeclaredClassConstant"
     "PhanUndeclaredClassInstanceof"
     "PhanUndeclaredClassMethod"
     "PhanUndeclaredClassReference"
+    "PhanUndeclaredClosureScope"
     "PhanUndeclaredConstant"
     "PhanUndeclaredExtendedClass"
     "PhanUndeclaredFunction"
@@ -80,26 +87,35 @@
     "PhanUndeclaredStaticProperty"
     "PhanUndeclaredTrait"
     "PhanUndeclaredTypeParameter"
+    "PhanUndeclaredTypeReturnType"
     "PhanUndeclaredTypeProperty"
     "PhanUndeclaredVariable"
+    "PhanUndeclaredVariableDim"
 
     ;; Issue::CATEGORY_TYPE
     "PhanNonClassMethodCall"
     "PhanTypeArrayOperator"
     "PhanTypeArraySuspicious"
+    "PhanTypeSuspiciousIndirectVariable"
     "PhanTypeComparisonFromArray"
     "PhanTypeComparisonToArray"
     "PhanTypeConversionFromArray"
     "PhanTypeInstantiateAbstract"
     "PhanTypeInstantiateInterface"
+    "PhanTypeInvalidClosureScope"
     "PhanTypeInvalidLeftOperand"
     "PhanTypeInvalidRightOperand"
+    "PhanTypeMagicVoidWithReturn"
     "PhanTypeMismatchArgument"
     "PhanTypeMismatchArgumentInternal"
     "PhanTypeMismatchDefault"
+    "PhanMismatchVariadicComment"
+    "PhanMismatchVariadicParam"
     "PhanTypeMismatchForeach"
     "PhanTypeMismatchProperty"
     "PhanTypeMismatchReturn"
+    "PhanTypeMismatchDeclaredReturn"
+    "PhanTypeMismatchDeclaredParam"
     "PhanTypeMissingReturn"
     "PhanTypeNonVarPassByRef"
     "PhanTypeParentConstructorCalled"
@@ -107,6 +123,7 @@
 
     ;; Issue::CATEGORY_ANALYSIS
     "PhanUnanalyzable"
+    "PhanUnanalyzableInheritance"
 
     ;; Issue::CATEGORY_VARIABLE
     "PhanVariableUseClause"
@@ -119,7 +136,10 @@
 
     ;; Issue::CATEGORY_DEPRECATED
     "PhanDeprecatedClass"
+    "PhanDeprecatedInterface"
+    "PhanDeprecatedTrait"
     "PhanDeprecatedFunction"
+    "PhanDeprecatedFunctionInternal"
     "PhanDeprecatedProperty"
 
     ;; Issue::CATEGORY_PARAMETER
@@ -137,6 +157,37 @@
     "PhanParamSignatureMismatchInternal"
     "PhanParamRedefined"
 
+    "PhanParamSignatureRealMismatchReturnType"
+    "PhanParamSignatureRealMismatchReturnTypeInternal"
+    "PhanParamSignaturePHPDocMismatchReturnType"
+    "PhanParamSignatureRealMismatchTooManyRequiredParameters"
+    "PhanParamSignatureRealMismatchTooManyRequiredParametersInternal"
+    "PhanParamSignaturePHPDocMismatchTooManyRequiredParameters"
+    "PhanParamSignatureRealMismatchTooFewParameters"
+    "PhanParamSignatureRealMismatchTooFewParametersInternal"
+    "PhanParamSignaturePHPDocMismatchTooFewParameters"
+    "PhanParamSignatureRealMismatchHasParamType"
+    "PhanParamSignatureRealMismatchHasParamTypeInternal"
+    "PhanParamSignaturePHPDocMismatchHasParamType"
+    "PhanParamSignatureRealMismatchHasNoParamType"
+    "PhanParamSignatureRealMismatchHasNoParamTypeInternal"
+    "PhanParamSignaturePHPDocMismatchHasNoParamType"
+    "PhanParamSignatureRealMismatchParamIsReference"
+    "PhanParamSignatureRealMismatchParamIsReferenceInternal"
+    "PhanParamSignaturePHPDocMismatchParamIsReference"
+    "PhanParamSignatureRealMismatchParamIsNotReference"
+    "PhanParamSignatureRealMismatchParamIsNotReferenceInternal"
+    "PhanParamSignaturePHPDocMismatchParamIsNotReference"
+    "PhanParamSignatureRealMismatchParamVariadic"
+    "PhanParamSignatureRealMismatchParamVariadicInternal"
+    "PhanParamSignaturePHPDocMismatchParamVariadic"
+    "PhanParamSignatureRealMismatchParamNotVariadic"
+    "PhanParamSignatureRealMismatchParamNotVariadicInternal"
+    "PhanParamSignaturePHPDocMismatchParamNotVariadic"
+    "PhanParamSignatureRealMismatchParamType"
+    "PhanParamSignatureRealMismatchParamTypeInternal"
+    "PhanParamSignaturePHPDocMismatchParamType"
+
     ;; Issue::CATEGORY_NOOP
     "PhanNoopArray"
     "PhanNoopClosure"
@@ -144,12 +195,14 @@
     "PhanNoopProperty"
     "PhanNoopVariable"
     "PhanUnreferencedClass"
+    "PhanUnreferencedFunction"
     "PhanUnreferencedMethod"
     "PhanUnreferencedProperty"
     "PhanUnreferencedConstant"
 
     ;; Issue::CATEGORY_REDEFINE
     "PhanRedefineClass"
+    "PhanRedefineClassAlias"
     "PhanRedefineClassInternal"
     "PhanRedefineFunction"
     "PhanRedefineFunctionInternal"
@@ -160,11 +213,30 @@
     "PhanAccessPropertyPrivate"
     "PhanAccessPropertyProtected"
     "PhanAccessMethodPrivate"
+    "PhanAccessMethodPrivateWithCallMagicMethod"
     "PhanAccessMethodProtected"
+    "PhanAccessMethodProtectedWithCallMagicMethod"
     "PhanAccessSignatureMismatch"
     "PhanAccessSignatureMismatchInternal"
     "PhanAccessStaticToNonStatic"
     "PhanAccessNonStaticToStatic"
+    "PhanAccessClassConstantPrivate"
+    "PhanAccessClassConstantProtected"
+    "PhanAccessPropertyStaticAsNonStatic"
+    "PhanAccessOwnConstructor"
+
+    "PhanAccessConstantInternal"
+    "PhanAccessClassInternal"
+    "PhanAccessClassConstantInternal"
+    "PhanAccessPropertyInternal"
+    "PhanAccessMethodInternal"
+    "PhanAccessWrongInheritanceCategory"
+    "PhanAccessWrongInheritanceCategoryInternal"
+    "PhanAccessExtendsFinalClass"
+    "PhanAccessExtendsFinalClassInternal"
+    "PhanAccessOverridesFinalMethod"
+    "PhanAccessOverridesFinalMethodInternal"
+    "PhanAccessOverridesFinalMethodPHPDoc"
 
     ;; Issue::CATEGORY_COMPATIBLE
     "PhanCompatibleExpressionPHP7"
@@ -176,7 +248,19 @@
     "PhanTemplateTypeStaticProperty"
     "PhanGenericGlobalVariable"
     "PhanGenericConstructorTypes"
-    ))
+
+    ;; Issue::CATEGORY_COMMENT
+    "PhanInvalidCommentForDeclarationType"
+    "PhanMisspelledAnnotation"
+    "PhanUnextractableAnnotation"
+    "PhanUnextractableAnnotationPart"
+    "PhanCommentParamWithoutRealParam"
+    "PhanCommentParamOnEmptyParamList"
+    )
+  "Issue names of Phan.
+
+https://github.com/etsy/phan/blob/master/src/Phan/Issue.php
+https://github.com/etsy/phan/wiki/Issue-Types-Caught-by-Phan")
 
 (defconst phan-log-warning-keywords
   '("can't be"
