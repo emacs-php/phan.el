@@ -238,6 +238,12 @@
    (cons "\\(?:\\$\\|->\\)\\(\\sw\\|\\s_\\)+"
          '(0 font-lock-variable-name-face))))
 
+;; Utility functions
+(defun phan--base-dir (directory)
+  "Return path to current project root in `DIRECTORY'."
+  (or (locate-dominating-file directory ".phan/config.php")
+      (composer--find-composer-root directory)))
+
 ;; Major modes
 
 ;;;###autoload
@@ -257,10 +263,7 @@
   (interactive)
   (if (null default-directory)
       (error "A variable `default-directory' is not set")
-    (let ((base-dir
-           (or (locate-dominating-file default-directory ".phan/config.php")
-               (composer--find-composer-root default-directory))))
-      (find-file (f-join base-dir ".phan/config.php")))))
+    (find-file (f-join (phan--base-dir default-directory) ".phan/config.php"))))
 
 (provide 'phan)
 ;;; phan.el ends here
