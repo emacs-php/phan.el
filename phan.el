@@ -28,6 +28,19 @@
 
 ;; Phan is static analizer for PHP.  https://github.com/etsy/phan
 ;; This package has utilities and major mode for phan log format.
+;;
+;; # Major modes
+;;
+;; ## phan-log-mode
+;;
+;; A major mode for viewing Phan log format.
+;;
+;; # Commands
+;;
+;; ## phan-find-config-file
+;;
+;; Open `.phan/config.php' of current directory.
+;;
 
 
 ;;; Code:
@@ -224,6 +237,8 @@
          '(1 font-lock-function-name-face))
    (cons "\\(?:\\$\\|->\\)\\(\\sw\\|\\s_\\)+"
          '(0 font-lock-variable-name-face))))
+
+;; Major modes
 
 ;;;###autoload
 (define-derived-mode phan-log-mode prog-mode "Phan-Log"
@@ -233,6 +248,8 @@
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("/phan.*\\.log\\'" . phan-log-mode))
+
+;; Commands
 
 ;;;###autoload
 (defun phan-find-config-file ()
