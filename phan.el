@@ -7,6 +7,7 @@
 ;; Version: 0.0.2
 ;; Keywords: tools php
 ;; Package-Requires: ((emacs "24") (composer "0.0.8") (f "0.17"))
+;; URL: https://github.com/emacs-php/phan.el
 
 ;; This file is NOT part of GNU Emacs.
 
