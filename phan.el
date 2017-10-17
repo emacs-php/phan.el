@@ -174,7 +174,10 @@
 
 (defconst phan-log-class-prefix-keywords
   '(":" "but" "class" "for" "function" "is" "method" "property" "return" "takes" "to" "type"
-    "Class" "Property" "Method"))
+    "Class" "Property"))
+
+(defconst phan-log-function-prefix-keywords
+  '("Function" "Method"))
 
 (defconst phan-log-mode-syntax-table
   (let ((table (make-syntax-table)))
@@ -202,8 +205,11 @@
                  (rx (group (? "\\") (+ (or "|" (syntax word) (syntax symbol))) "()")))
          '(1 font-lock-function-name-face))
    (cons (concat "\\(?:|\\|, \\| " (regexp-opt phan-log-class-prefix-keywords) " \\)"
-                 (rx (group "\\" (+ (or "|" (syntax word) (syntax symbol))))))
+                 (rx (group "\\" (+ (or "?" "|" "[]" (syntax word) (syntax symbol))))))
          '(1 font-lock-type-face))
+   (cons (concat "\\(?:|\\|, \\| " (regexp-opt phan-log-function-prefix-keywords) " \\)"
+                 (rx (group "\\" (+ (or (syntax word) (syntax symbol))))))
+         '(1 font-lock-function-name-face))
    (cons " constant \\(\\(?:\\sw\\|\\s_\\)+\\)"
          '(1 font-lock-constant-face))
    (cons "\\(?:::\\|->\\)\\(\\(?:\\sw\\|\\s_\\)+()\\)"
