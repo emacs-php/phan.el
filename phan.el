@@ -37,6 +37,8 @@
 (defgroup phan nil
   "Utilities for Phan (PHP static analizer)"
   :prefix "phan-"
+  :link '(url-link :tag "Phan Wiki" "https://github.com/phan/phan/wiki")
+  :link '(url-link :tag "phan.el site" "https://github.com/emacs-php/phan.el")
   :group 'tools
   :group 'php)
 
