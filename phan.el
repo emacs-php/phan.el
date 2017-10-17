@@ -236,7 +236,12 @@
 (defun phan-find-config-file ()
   "Open Phan config file of the project."
   (interactive)
-  (find-file (f-join (composer--find-composer-root default-directory) ".phan/config.php")))
+  (if (null default-directory)
+      (error "A variable `default-directory' is not set")
+    (let ((base-dir
+           (or (locate-dominating-file default-directory ".phan/config.php")
+               (composer--find-composer-root default-directory))))
+      (find-file (f-join base-dir ".phan/config.php")))))
 
 (provide 'phan)
 ;;; phan.el ends here
