@@ -275,10 +275,12 @@ https://github.com/etsy/phan/wiki/Issue-Types-Caught-by-Phan")
   '("can't be"
     "deprecated"
     "has no return value"
+    "not found"
     "only takes"
     "should be compatible"
     "Suspicious"
-    "undeclared"))
+    "undeclared"
+    "unextractable annotation"))
 
 (defconst phan-log-class-prefix-keywords
   '(":" "but" "class" "for" "function" "is" "method" "property" "return" "takes" "to" "type"
@@ -311,7 +313,7 @@ https://github.com/etsy/phan/wiki/Issue-Types-Caught-by-Phan")
    (cons "\\[]" '(0 font-lock-type-face))
    (cons (concat " " (regexp-opt phan-issues) " ")
          '(0 font-lock-keyword-face))
-   (cons (concat "\\(?:\\`\\| \\)\\(" (regexp-opt phan-log-warning-keywords) "\\)\\(?: \\|$\\)")
+   (cons (concat "\\(?:\\`\\| \\)\\(" (regexp-opt phan-log-warning-keywords) "\\)[ $,]")
          '(1 font-lock-warning-face))
    (cons (concat "\\(?:|\\|, \\| " (regexp-opt phan-log-class-prefix-keywords) " \\)"
                  (rx (group (? "\\") (+ (or "|" (syntax word) (syntax symbol))) "()")))
@@ -328,6 +330,8 @@ https://github.com/etsy/phan/wiki/Issue-Types-Caught-by-Phan")
          '(1 font-lock-function-name-face))
    (cons "::\\(\\(?:\\sw\\|\\s_\\)+\\)"
          '(1 font-lock-constant-face))
+   (cons " \\(?:Argument [0-9]+\\|annotation for\\) (\\(\\(?:\\sw\\|\\s_\\)+\\))"
+         '(1 font-lock-variable-name-face))
    (cons " Argument [0-9]+ (\\(\\(?:\\sw\\|\\s_\\)+\\))"
          '(1 font-lock-variable-name-face))
    (cons " Call to method \\([^\n\\][^\n ]*\\) "
