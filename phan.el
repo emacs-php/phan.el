@@ -91,6 +91,10 @@
     "PhanUndeclaredTypeProperty"
     "PhanUndeclaredVariable"
     "PhanUndeclaredVariableDim"
+    "PhanUndeclaredClassInCallable"
+    "PhanUndeclaredStaticMethodInCallable"
+    "PhanUndeclaredFunctionInCallable"
+    "PhanUndeclaredMethodInCallable"
 
     ;; Issue::CATEGORY_TYPE
     "PhanNonClassMethodCall"
@@ -120,6 +124,9 @@
     "PhanTypeNonVarPassByRef"
     "PhanTypeParentConstructorCalled"
     "PhanTypeVoidAssignment"
+    "PhanTypeInvalidCallableArraySize"
+    "PhanTypeInvalidCallableArrayKey"
+    "PhanTypeInvalidCallableObjectOfMethod"
 
     ;; Issue::CATEGORY_ANALYSIS
     "PhanUnanalyzable"
@@ -256,6 +263,8 @@
     "PhanUnextractableAnnotationPart"
     "PhanCommentParamWithoutRealParam"
     "PhanCommentParamOnEmptyParamList"
+    "PhanCommentOverrideOnNonOverrideMethod"
+    "PhanCommentOverrideOnNonOverrideConstant"
     )
   "Issue names of Phan.
 
