@@ -1,10 +1,10 @@
 ;;; phan.el --- Utility functions for Phan (PHP static analizer)  -*- lexical-binding: t -*-
 
-;; Copyright (C) 2017 USAMI Kenta
+;; Copyright (C) 2018  Friends of Emacs-PHP development
 
 ;; Author: USAMI Kenta <tadsan@pixiv.com>
 ;; Created: 28 Jan 2017
-;; Version: 0.0.3
+;; Version: 0.0.4
 ;; Keywords: tools php
 ;; Package-Requires: ((emacs "24") (composer "0.0.8") (f "0.17"))
 ;; URL: https://github.com/emacs-php/phan.el
