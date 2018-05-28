@@ -400,7 +400,8 @@ https://github.com/etsy/phan/wiki/Issue-Types-Caught-by-Phan")
     (modify-syntax-entry ?\) "_" table)
     (modify-syntax-entry ?\\ "_" table)
     (modify-syntax-entry ?_  "_" table)
-    (modify-syntax-entry ?|  "." table)
+    (modify-syntax-entry ??  "_" table)
+    (modify-syntax-entry ?|  "_" table)
     table))
 
 (defconst phan-log-font-lock-keywords
