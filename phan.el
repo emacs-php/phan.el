@@ -577,7 +577,194 @@
     "PhanCommentAmbiguousClosure"
     "PhanCommentDuplicateParam"
     "PhanCommentDuplicateMagicMethod"
-    "PhanCommentDuplicateMagicProperty")
+    "PhanCommentDuplicateMagicProperty"
+
+    ;;; Plugins
+
+    ;; UnreachableCodePlugin.php
+    "PhanPluginUnreachableCode"
+
+    ;; StrictComparisonPlugin
+    "PhanPluginComparisonNotStrictInCall"
+    "PhanPluginComparisonObjectEqualityNotStrict"
+    "PhanPluginComparisonObjectOrdering"
+
+    ;; AlwaysReturnPlugin.php
+    "PhanPluginAlwaysReturnFunction"
+    "PhanPluginAlwaysReturnMethod"
+
+    ;; PregRegexCheckerPlugin.php
+    "PhanPluginInvalidPregRegex"
+    "PhanPluginInvalidPregRegexReplacement"
+
+    ;; LoopVariableReusePlugin.php
+    "PhanPluginLoopVariableReuse"
+
+    ;; DuplicateArrayKeyPlugin.php
+    "PhanPluginDuplicateArrayKey"
+    "PhanPluginDuplicateArrayKeyExpression"
+    "PhanPluginDuplicateSwitchCase"
+    "PhanPluginDuplicateSwitchCaseLooseEquality"
+    "PhanPluginMixedKeyNoKey"
+
+    ;; NotFullyQualifiedUsagePlugin.php
+    "PhanPluginNotFullyQualifiedFunctionCall"
+    "PhanPluginNotFullyQualifiedGlobalConstant"
+    "PhanPluginNotFullyQualifiedOptimizableFunctionCall"
+
+    ;; PHPDocToRealTypesPlugin.php
+    "PhanPluginCanUseNullableParamType"
+    "PhanPluginCanUseNullableReturnType"
+    "PhanPluginCanUsePHP71Void"
+    "PhanPluginCanUseParamType"
+    "PhanPluginCanUseReturnType"
+
+    ;; NoAssertPlugin.php
+    "PhanPluginNoAssert"
+
+    ;; InlineHTMLPlugin.php
+    "PhanPluginInlineHTML"
+    "PhanPluginInlineHTMLLeading"
+    "PhanPluginInlineHTMLTrailing"
+
+    ;; UnknownElementTypePlugin.php
+    "PhanPluginUnknownArrayClosureParamType"
+    "PhanPluginUnknownArrayClosureReturnType"
+    "PhanPluginUnknownArrayFunctionParamType"
+    "PhanPluginUnknownArrayFunctionReturnType"
+    "PhanPluginUnknownArrayMethodParamType"
+    "PhanPluginUnknownArrayMethodReturnType"
+    "PhanPluginUnknownArrayPropertyType"
+    "PhanPluginUnknownClosureParamType"
+    "PhanPluginUnknownClosureReturnType"
+    "PhanPluginUnknownFunctionParamType"
+    "PhanPluginUnknownFunctionReturnType"
+    "PhanPluginUnknownMethodParamType"
+    "PhanPluginUnknownMethodReturnType"
+    "PhanPluginUnknownPropertyType"
+
+    ;; NumericalComparisonPlugin.php
+    "PhanPluginNumericalComparison"
+
+    ;; EmptyStatementListPlugin.php
+    "PhanPluginEmptyStatementDoWhileLoop"
+    "PhanPluginEmptyStatementForLoop"
+    "PhanPluginEmptyStatementForeachLoop"
+    "PhanPluginEmptyStatementIf"
+    "PhanPluginEmptyStatementSwitch"
+    "PhanPluginEmptyStatementTryBody"
+    "PhanPluginEmptyStatementTryFinally"
+    "PhanPluginEmptyStatementWhileLoop"
+
+    ;; DemoPlugin.php
+    "PhanPluginInstanceOfObject"
+
+    ;; AvoidableGetterPlugin.php
+    "PhanPluginAvoidableGetter"
+    "PhanPluginAvoidableGetterInTrait"
+
+    ;; NonBoolBranchPlugin.php
+    "PhanPluginNonBoolBranch"
+
+    ;; PHPDocRedundantPlugin.php
+    "PhanPluginRedundantClosureComment"
+    "PhanPluginRedundantFunctionComment"
+    "PhanPluginRedundantMethodComment"
+    "PhanPluginRedundantReturnComment"
+
+    ;; PhanSelfCheckPlugin.php
+    "PhanPluginTooFewArgumentsForIssue"
+    "PhanPluginTooManyArgumentsForIssue"
+    "PhanPluginUnknownIssueType"
+
+    ;; RedundantAssignmentPlugin.php
+    "PhanPluginRedundantAssignment"
+    "PhanPluginRedundantAssignmentInGlobalScope"
+    "PhanPluginRedundantAssignmentInLoop"
+
+    ;; DollarDollarPlugin.php
+    "PhanPluginDollarDollar"
+
+    ;; InvalidVariableIssetPlugin.php
+    "PhanPluginComplexVariableInIsset"
+    "PhanPluginInvalidVariableIsset"
+    "PhanPluginInvalidVariableIsset"
+    "PhanPluginUndeclaredVariableIsset"
+    "PhanPluginUnexpectedExpressionIsset"
+
+    ;; WhitespacePlugin.php
+    "PhanPluginWhitespaceCarriageReturn"
+    "PhanPluginWhitespaceTab"
+    "PhanPluginWhitespaceTrailing"
+
+    ;; HasPHPDocPlugin.php
+    "PhanPluginDescriptionlessCommentOnClass"
+    "PhanPluginDescriptionlessCommentOnFunction"
+    "PhanPluginDescriptionlessCommentOnPrivateMethod"
+    "PhanPluginDescriptionlessCommentOnPrivateProperty"
+    "PhanPluginDescriptionlessCommentOnProtectedMethod"
+    "PhanPluginDescriptionlessCommentOnProtectedProperty"
+    "PhanPluginDescriptionlessCommentOnPublicMethod"
+    "PhanPluginDescriptionlessCommentOnPublicProperty"
+    "PhanPluginDuplicateMethodDescription"
+    "PhanPluginDuplicatePropertyDescription"
+    "PhanPluginNoCommentOnClass"
+    "PhanPluginNoCommentOnFunction"
+    "PhanPluginNoCommentOnPrivateMethod"
+    "PhanPluginNoCommentOnPrivateProperty"
+    "PhanPluginNoCommentOnProtectedMethod"
+    "PhanPluginNoCommentOnProtectedProperty"
+    "PhanPluginNoCommentOnPublicMethod"
+    "PhanPluginNoCommentOnPublicProperty"
+
+    ;; PrintfCheckerPlugin.php
+    "PhanPluginMyIssue"
+    "PhanPluginPrintfIncompatibleArgumentType"
+    "PhanPluginPrintfIncompatibleArgumentTypeWeak"
+    "PhanPluginPrintfIncompatibleSpecifier"
+    "PhanPluginPrintfNoArguments"
+    "PhanPluginPrintfNoArguments"
+    "PhanPluginPrintfNoSpecifiers"
+    "PhanPluginPrintfNonexistentArgument"
+    "PhanPluginPrintfNonexistentArgument"
+    "PhanPluginPrintfNotPercent"
+    "PhanPluginPrintfTranslatedHasMoreArgs"
+    "PhanPluginPrintfTranslatedIncompatible"
+    "PhanPluginPrintfUnusedArgument"
+    "PhanPluginPrintfVariableFormatString"
+    "PhanPluginPrintfWidthNotPosition"
+
+    ;; PreferNamespaceUsePlugin.php
+    "PhanPluginPreferNamespaceUseParamType"
+    "PhanPluginPreferNamespaceUseReturnType"
+
+    ;; SuspiciousParamOrderPlugin.php
+    "PhanPluginSuspiciousParamOrder"
+    "PhanPluginSuspiciousParamOrderInternal"
+
+    ;; DuplicateExpressionPlugin.php
+    "PhanPluginBothLiteralsBinaryOp"
+    "PhanPluginDuplicateConditionalNullCoalescing"
+    "PhanPluginDuplicateConditionalTernaryDuplication"
+    "PhanPluginDuplicateConditionalUnnecessary"
+    "PhanPluginDuplicateExpressionAssignment"
+    "PhanPluginDuplicateExpressionBinaryOp"
+    "PhanPluginDuplicateIfCondition"
+    "PhanPluginDuplicateIfStatements"
+
+    ;; NonBoolInLogicalArithPlugin.php
+    "PhanPluginNonBoolInLogicalArith"
+
+    ;; PossiblyStaticMethodPlugin.php
+    "PhanPluginPossiblyStaticClosure"
+    "PhanPluginPossiblyStaticPrivateMethod"
+    "PhanPluginPossiblyStaticProtectedMethod"
+    "PhanPluginPossiblyStaticPublicMethod"
+
+    ;; InvokePHPNativeSyntaxCheckPlugin.php
+
+    ;; PHPUnitAssertionPlugin.php
+    "PhanPluginPHPUnitAssertionInvalidInternalType")
   "Issue names of Phan.
 
 https://github.com/phan/phan/blob/master/src/Phan/Issue.php
