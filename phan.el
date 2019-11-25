@@ -775,12 +775,14 @@ https://github.com/phan/phan/wiki/Issue-Types-Caught-by-Phan")
 
 (defconst phan-log-warning-keywords
   '("can't be"
+    "Invalid operator"
+    "Suspicious"
     "deprecated"
     "has no return value"
     "not found"
     "only takes"
+    "requires"
     "should be compatible"
-    "Suspicious"
     "undeclared"
     "unextractable annotation"))
 
@@ -819,8 +821,6 @@ https://github.com/phan/phan/wiki/Issue-Types-Caught-by-Phan")
          '(0 font-lock-type-face))
    (cons (concat " " (regexp-opt phan-issues) " ")
          '(0 font-lock-keyword-face))
-   (cons (concat "\\(?:\\`\\| \\)\\(" (regexp-opt phan-log-warning-keywords) "\\)[ $,]")
-         '(1 font-lock-warning-face))
    (cons (concat "\\(?:|\\|, \\| " (regexp-opt phan-log-class-prefix-keywords) " \\)"
                  (rx (group (? "\\") (+ (or "|" (syntax word) (syntax symbol))) "()")))
          '(1 font-lock-function-name-face))
@@ -843,7 +843,9 @@ https://github.com/phan/phan/wiki/Issue-Types-Caught-by-Phan")
    (cons " Call to method \\([^\n\\][^\n ]*\\) "
          '(1 font-lock-function-name-face))
    (cons "\\(?:\\$\\|->\\)\\(\\sw\\|\\s_\\)+"
-         '(0 font-lock-variable-name-face))))
+         '(0 font-lock-variable-name-face))
+   (cons (regexp-opt phan-log-warning-keywords 'words)
+         '(0 font-lock-warning-face))))
 
 ;; Utility functions
 (defun phan--base-dir (directory)
