@@ -26,7 +26,7 @@
 
 ;;; Commentary:
 
-;; Phan is static analizer for PHP.  https://github.com/etsy/phan
+;; Phan is static analizer for PHP.  https://github.com/phan/phan
 ;; This package has utilities and major mode for phan log format.
 ;;
 ;; # Major modes
@@ -580,8 +580,8 @@
     "PhanCommentDuplicateMagicProperty")
   "Issue names of Phan.
 
-https://github.com/etsy/phan/blob/master/src/Phan/Issue.php
-https://github.com/etsy/phan/wiki/Issue-Types-Caught-by-Phan")
+https://github.com/phan/phan/blob/master/src/Phan/Issue.php
+https://github.com/phan/phan/wiki/Issue-Types-Caught-by-Phan")
 
 (defconst phan-log-warning-keywords
   '("can't be"
