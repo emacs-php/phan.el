@@ -56,7 +56,10 @@
   :group 'php)
 
 (defconst phan-php-types
-  '("array" "bool" "float" "int" "null" "resource" "string" "void"))
+  '("array" "associative-array" "bool" "callable" "callable-array"
+    "callable-object" "callable-string" "false" "float" "int" "iterable"
+    "list" "mixed" "void" "non-empty-array" "non-empty-associative-array"
+    "non-empty-list" "null" "resource" "string" "true" "void"))
 
 (defconst phan-issues
   '(;; Issue::CATEGORY_SYNTAX
