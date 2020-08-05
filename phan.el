@@ -841,10 +841,10 @@ https://github.com/phan/phan/wiki/Issue-Types-Caught-by-Phan")
 
 (defconst phan-log-class-prefix-keywords
   '(":" "but" "class" "for" "function" "is" "method" "property" "return" "takes" "to" "type"
-    "Class" "Property"))
+    "classlike/namespace" "Class" "Property"))
 
 (defconst phan-log-function-prefix-keywords
-  '("Function" "Method"))
+  '("function" "Function" "Method"))
 
 (defconst phan-log-mode-syntax-table
   (let ((table (make-syntax-table)))
