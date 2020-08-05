@@ -870,7 +870,7 @@ https://github.com/phan/phan/wiki/Issue-Types-Caught-by-Phan")
    (list "^\\([^:]+\\):\\([0-9]+\\)"
          '(1 font-lock-doc-face)
          '(2 font-lock-builtin-face))
-   (cons (concat "\\??" (regexp-opt phan-php-types) "\\(\\[]\\)?")
+   (cons (concat "\\??" (regexp-opt phan-php-types 'symbols) "\\(\\[]\\)?")
          '(0 font-lock-type-face))
    (cons (concat " " (regexp-opt phan-issues) " ")
          '(0 font-lock-keyword-face))
