@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "phan"
          "0.0.4"
          "Utility functions for Phan (PHP static analizer)")
